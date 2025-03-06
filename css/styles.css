@@ -505,6 +505,15 @@ footer li {
 
 /*SMARTPHONES PORTRAIT ET PAYSAGES*/
 @media screen and (min-width:400px) and (max-width:767px) {
+
+  nav {
+    display: none;
+  }
+
+  .seeCV {
+    width: 100%;
+  }
+
   .mySkills {
     width: 100%;
     margin-bottom: 20px;
@@ -516,7 +525,7 @@ footer li {
   }
 
   .mySkills .content p {
-    width: 100%;
+    width: auto;
   }
 
   .timeline {
@@ -546,31 +555,35 @@ footer li {
     display: none;
   }
 
-
-
   .timeline .timelineContent:nth-child(odd) {
     flex-direction: row;
   }
 
-/*
-  .timeline .timelineContent::after{
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: 22px solid transparent;
-    border-top-color: rgb(66, 73, 73);
-    right: 0;
-    left: 45%;
-    bottom:67vw;
-  }*/
-
-  .timeline .timelineContent:nth-child(odd)::after{
-    border:0;
+  .timeline .timelineContent::after,
+  .timeline .timelineContent:nth-child(odd)::after {
+    display: none;
   }
 
+  .formContact,
+  .iconeContact {
+    width: 100%;
+  }
+
+  .contactBlock {
+    height: auto;
+  }
+
+  .iconeGroup {
+    width: 50%;
+    margin: 20px auto;
+  }
+
+  .footerCopyright p {
+    text-align: center;
+  }
 
 }
+
 
 /*TABLETTE PORTRAIT ET PAYSAGE*/
 @media screen and (min-width: 768px) and (max-width:1024px) {
