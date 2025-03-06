@@ -168,7 +168,7 @@ footer li {
 
 /*DECLARATION DES CLASSES*/
 
-/***********EN TETE DE PAGE************/
+/***********HEADER************/
 
 .parallax {
   background-image: url("../images/BackgroundAccueil.jpg");
@@ -213,6 +213,10 @@ footer li {
 .container .logo img {
   width: 350px;
   height: auto;
+}
+
+.borderBottom {
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .mainTitle {
@@ -266,9 +270,13 @@ footer li {
 
 /***********PRESENTATION***********/
 .seeCV {
+  display: inline-block;
   background-color: rgb(66, 73, 73);
   padding: 20px;
   border-radius: 20px;
+  width: 25%;
+  text-align: center;
+  margin: auto;
 }
 
 /***********COMPETENCES************/
@@ -303,15 +311,15 @@ footer li {
   width: 35%;
 }
 
-.mySkills .content i:hover{
-  color:#ffffff;
+.mySkills .content i:hover {
+  color: #ffffff;
 }
 
 .mySkills .content p {
   width: 65%;
 }
 
-/***JOURNEY******/
+/******JOURNEY******/
 .journeyBlock .container>p {
   width: 100%;
   text-align: center;
@@ -346,28 +354,23 @@ footer li {
   border-right: 2px solid;
 }
 
-.timelineContent {
+.timeline .timelineContent {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 }
 
-.timelineContent:nth-child(odd) {
+.timeline .timelineContent:nth-child(odd) {
   flex-direction: row-reverse;
-
 }
 
 .timeline .content {
   color: #fff;
-  background-color: rgb(145, 185, 147);
+  background-color: rgb(66, 73, 73);
   padding: 20px;
   width: 40%;
   border-radius: 20px;
-}
-
-.timeline .content:nth-child(1n+1) {
-  background-color: rgb(66, 73, 73);
 }
 
 
@@ -380,8 +383,7 @@ footer li {
 .pictureJourney img {
   border: 5px solid black;
   border-radius: 25%;
-  width: 8vw;
-  height: 8vw;
+  width: 65%;
   background-color: #000;
   position: relative;
   z-index: 1000;
@@ -427,9 +429,8 @@ footer li {
   padding: 10px;
   margin: 10px 0;
   width: 100%;
-
-
 }
+
 
 .formGroup textarea {
   width: 100%;
@@ -439,13 +440,21 @@ footer li {
 
 .formGroup input,
 .formGroup textarea {
-  /*border-radius: 20px;*/
   font-size: 1.6rem;
   background: none;
   border-right: none;
   border-top: none;
   color: #fff;
+  border-bottom-left-radius: 20px;
+
 }
+
+.formGroup input[type="submit"] {
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+
+
 
 .formGroup .btnSubmit {
   width: 25%;
@@ -485,29 +494,96 @@ footer li {
   margin-left: 20px;
 }
 
-/***********PIED DE PAGE************/
-
-footer p {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-.footerNav {
+/***********FOOTER************/
+.footerCopyright {
   justify-content: center;
 }
 
-.footerNav a {
-  color: #000;
-}
-
-.footerNav a:hover {
-  color: #91b993;
-}
-
-/**************OTHERS************/
-
-.borderBottomNavigation {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
 
 /*************RESPONSIVE DESIGN************/
+
+
+/*SMARTPHONES PORTRAIT ET PAYSAGES*/
+@media screen and (min-width:400px) and (max-width:767px) {
+  .mySkills {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .mySkills img {
+    width: 80%;
+    height: auto;
+  }
+
+  .mySkills .content p {
+    width: 100%;
+  }
+
+  .timeline {
+    width: 100%;
+  }
+
+  .timelineContent {
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .timeline .content {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .pictureJourney {
+    width: 100%;
+  }
+
+  .pictureJourney img {
+    width: 70%;
+  }
+
+  .timeline::before,
+  .timeline::after {
+    display: none;
+  }
+
+
+
+  .timeline .timelineContent:nth-child(odd) {
+    flex-direction: row;
+  }
+
+/*
+  .timeline .timelineContent::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 22px solid transparent;
+    border-top-color: rgb(66, 73, 73);
+    right: 0;
+    left: 45%;
+    bottom:67vw;
+  }*/
+
+  .timeline .timelineContent:nth-child(odd)::after{
+    border:0;
+  }
+
+
+}
+
+/*TABLETTE PORTRAIT ET PAYSAGE*/
+@media screen and (min-width: 768px) and (max-width:1024px) {
+  .mySkills {
+    width: 32%;
+  }
+
+  .mySkills .content {
+    width: 100%;
+  }
+
+  .mySkills img {
+    width: 100%;
+    height: auto;
+  }
+}
